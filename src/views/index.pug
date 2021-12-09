@@ -1,0 +1,19 @@
+extends layouts/default
+include helpers/mixins
+include ../blocks/components/form/form.pug
+
+
+block variables
+	- const title = "gulp-pug-starter"
+
+block content
+	section.firstBlock
+		form(action="#")
+			+input('text','Введите ваше имя','Имя', true)
+			+input('tel','Введите ваш телефон','Телефон', true)
+			+textarea('Введите сообщение','Сообщение', false)
+			+submit('Отправить заявку')
+
+block scripts
+	script(src="js/main.js")
+	script(src="js/vendor.js")

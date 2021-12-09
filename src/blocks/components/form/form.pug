@@ -1,0 +1,19 @@
+mixin input(type, placeholder,label,required)
+  .input(class="input-"+(type ? type : '')+"")
+    if label 
+      span.label=label
+    if required
+      input(type=type, placeholder=placeholder, required="true")
+    else
+      input(type=type, placeholder=placeholder)
+mixin textarea(placeholder,label,required)
+  .textarea
+    if label 
+      span.label=label
+    if required
+      textarea(placeholder=placeholder, required="true")
+    else
+      textarea(placeholder=placeholder)
+mixin submit(value)
+  .input.input-submit
+    input(type="submit", value=value)

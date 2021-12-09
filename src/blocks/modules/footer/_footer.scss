@@ -1,0 +1,17 @@
+footer {
+    margin-top: auto;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    &-nav {
+        margin: 0 auto;
+        &__ul {
+            display: flex;
+            li {
+                margin: 0 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+include ../../components/burger/burger
+.mobileMenu
+  .container
+    .mobileMenu-header
+      .mobileMenu-header__toggle
+        +burger('opened')
+    .mobileMenu-nav
+      ul.mobileMenu-nav__ul
+        li
+          a(href="#") Item 1
+        li
+          a(href="#") Item 2
+        li
+          a(href="#") Item 3
+    .mobileMenu-footer
