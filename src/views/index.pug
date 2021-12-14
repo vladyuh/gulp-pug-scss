@@ -7,12 +7,15 @@ block variables
 	- const title = "gulp-pug-starter"
 
 block content
-	section.firstBlock
-		form(action="#")
-			+input('text','Введите ваше имя','Имя', true)
-			+input('tel','Введите ваш телефон','Телефон', true)
-			+textarea('Введите сообщение','Сообщение', false)
-			+submit('Отправить заявку')
+	//section.firstBlock
+		.container
+			form(action="#", style="max-width: 400px")
+				+input('text','Введите ваше имя','Имя', true)
+				+input('tel','Введите ваш телефон','Телефон', true)
+				+select('Выберите','Город',['Выберите','Минск','Могилев'])
+				+textarea('Введите сообщение','Сообщение', false)
+				+submit('Отправить заявку')
+	
 
 block scripts
 	script(src="js/main.js")
