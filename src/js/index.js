@@ -2,7 +2,7 @@ import "./import/modules";
 import "./import/components";
 
 //libraries
-import $ from "jquery";
+import $, { each } from "jquery";
 import Inputmask from "inputmask";
 import { mobileInit } from "../blocks/components/mobileMenu/mobileMenu";
 
@@ -40,4 +40,5 @@ if ('loading' in HTMLImageElement.prototype) {
     script.src =
         'https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.3.1/lazysizes.min.js';
     document.body.appendChild(script);
+    console.log('lazysizes load');
 }

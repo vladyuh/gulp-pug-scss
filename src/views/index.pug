@@ -1,20 +1,59 @@
 extends layouts/default
 include helpers/mixins
+include ../blocks/components/breadcrumbs/breadcrumbs.pug
 include ../blocks/components/form/form.pug
+include ../blocks/components/accordion/accordion.pug
+include ../blocks/components/headers/headers.pug
+include ../blocks/components/pagination/pagination.pug
 
 
 block variables
-	- const title = "gulp-pug-starter"
+	- const title = "Главная"
 
 block content
-	//section.firstBlock
+	section.firstBlock
 		.container
+			+h3('Hamburger')
+			+burger
+	section.firstBlock
+		.container
+				+h3('Breadcrumbs')
+				+breadcrumb(['Главная','Компоненты'],'',1)
+	section.firstBlock
+		.container
+			+h3('Form')
 			form(action="#", style="max-width: 400px")
 				+input('text','Введите ваше имя','Имя', true)
 				+input('tel','Введите ваш телефон','Телефон', true)
 				+select('Выберите','Город',['Выберите','Минск','Могилев'])
 				+textarea('Введите сообщение','Сообщение', false)
 				+submit('Отправить заявку')
+	section.firstBlock
+		.container
+			+h3('Accordion')
+			+accordion(
+				'faq',
+				[
+					{
+						title: 'Pug also provides the pug.render() family of functions that combine compiling and rendering into one step.',
+						answer: 'However, the template function will be re-compiled every time render is called, which might impact performance.'
+					},
+					{
+						title: 'Alternatively, you can use the cache option with render, which will automatically store the compiled function into an internal cache.',
+						answer: '(NOTE: Examples on this page use the pipe character (|) for whitespace control.)'
+					},
+					{
+						title: 'Tag attributes look similar to HTML (with optional commas), but their values are just regular JavaScript.',
+						answer: '(NOTE: Examples on this page use the pipe character (|) for whitespace control.)'
+					}
+				]
+			)
+	section.firstBlock
+		.container
+			+h3('Pagination')
+			+pagination
+	
+
 	
 
 block scripts
